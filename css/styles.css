@@ -49,3 +49,8 @@
 .headings{
   text-align: center;
 }
+
+.list{
+  text-decoration: none;
+  text-align: left;
+}

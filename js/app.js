@@ -36,6 +36,10 @@ games.addEventListener('click', function(){
  };
  let division = document.getElementById('insert');
 for (let i = 0; i < cats.models.length; i++) {
+  let char = cats.models[i];
   const element = document.createElement('li');
-    let list = division.insertAdjacentHTML('beforeend', element);
+  element.textContent = cats.models[i].name;
+    let list = document.body.appendChild(element);
+    element.setAttribute('style','text-align:center; display:inline-block;text-decoration:none;margin-left:5%;');
+
 }
