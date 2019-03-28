@@ -1,11 +1,14 @@
-var games = document.querySelector(".images");
-var text = document.querySelector(".count");
+let games = document.querySelector("#images");
+let text = document.querySelector(".count");
+const nameList = document.getElementById('insert');
+
 var count = 0;
 games.addEventListener('click', function(){
   count++;
   text.innerHTML = count;
 });
  let cats = {
+
    models : [
      {
        name : 'Anne',
@@ -24,7 +27,7 @@ games.addEventListener('click', function(){
      },
      {
        name : 'Scarlet',
-       url:'images/carlet.jpg',
+       url:'images/scarlet.jpg',
        clicks: 0
      },
      {
@@ -34,12 +37,17 @@ games.addEventListener('click', function(){
      }
    ]
  };
- let division = document.getElementById('insert');
 for (let i = 0; i < cats.models.length; i++) {
-  let char = cats.models[i];
-  const element = document.createElement('li');
-  element.textContent = cats.models[i].name;
-    let list = document.body.appendChild(element);
-    element.setAttribute('style','text-align:center; display:inline-block;text-decoration:none;margin-left:5%;');
 
-}
+  nameList.insertAdjacentHTML('beforeend',`<li class='list'> ${cats.models[i].name}</li>`);
+
+};
+const listItem = document.getElementsByClassName('list');
+const cutie = document.querySelector('#images');
+for (let i = 0; i < cats.models.length; i++) {
+listItem[i].addEventListener('click', function() {
+    cutie.setAttribute('src',`${cats.models[i].url}`);
+    listItem[i].style.color = 'cornflowerblue';
+
+});
+};
