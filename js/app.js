@@ -1,14 +1,5 @@
-let games = document.querySelector("#images");
-let text = document.querySelector(".count");
-const nameList = document.getElementById('insert');
-
-var count = 0;
-games.addEventListener('click', function(){
-  count++;
-  text.innerHTML = count;
-});
  let cats = {
-
+   currentCat: null,
    models : [
      {
        name : 'Anne',
@@ -37,17 +28,40 @@ games.addEventListener('click', function(){
      }
    ]
  };
-for (let i = 0; i < cats.models.length; i++) {
+ // game engine
 
-  nameList.insertAdjacentHTML('beforeend',`<li class='list'> ${cats.models[i].name}</li>`);
 
+let octopus = {
+  count : cats.models[0].clicks,
+  incrementer: function(){
+    return this.count++;
+  },
 };
-const listItem = document.getElementsByClassName('list');
-const cutie = document.querySelector('#images');
-for (let i = 0; i < cats.models.length; i++) {
-listItem[i].addEventListener('click', function() {
-    cutie.setAttribute('src',`${cats.models[i].url}`);
-    listItem[i].style.color = 'cornflowerblue';
 
-});
-};
+// listing the names of cats
+let catView = {
+
+  createList : function(){
+    this.nameList = document.getElementById('insert');
+  for (let i = 0; i < cats.models.length; i++) {
+   this.nameList.insertAdjacentHTML('beforeend',`<li class='list'> ${cats.models[i].name}</li>`);
+
+ }
+
+  // this.create();
+},
+// method to display images accordingly when any name clicked
+  render : function(){
+    const cutie = document.querySelector('#images');
+    this.nameList = document.getElementsByClassName('list');
+    for(let i = 0; i < cats.models.length; i++){
+      this.nameList[i].addEventListener('click',function(){
+        cutie.setAttribute('src',`${cats.models[i].url}`);
+      });
+    }
+    cutie.addEventListener('click',octopus.incrementer());
+  },
+}
+// catView.render();
+catView.createList();
+catView.render();

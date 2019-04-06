@@ -13,6 +13,20 @@
 body{
   background-color: aliceblue;
 }
+@media  screen and (max-width:700px) {
+  .leftcolumn{
+    width: 100%;
+  }
+  .rightcolumn{
+    width: 100%;
+    margin-left: 30%;
+  }
+  .insert{
+    width: 60%;
+  }
+
+}
+
 
 .rightcolumn{
   width: 30%;
@@ -20,13 +34,21 @@ body{
 
 }
 
-
-
+#admin{
+  margin-top: 30%;
+}
+.insert{
+  display: block;
+  padding:10px;
+  margin: 3%;
+  border-radius: 7%;
+  width: 60%;
+}
 .count{
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  font-size: 10.8em;
+  font-size: 1000%;
   color: brown;
    /* box-shadow: 20px 20px 50px 15px cornflowerblue; */
 }
@@ -38,6 +60,7 @@ body{
   box-sizing: border-box;
   cursor: pointer;
   margin-top: 5%;
+  width: 70%;
 }
 @media screen and (max-width:800px){
 .images{
@@ -48,6 +71,10 @@ body{
 
 .headings{
   text-align: center;
+}
+
+#form{
+  margin-top: 20px;
 }
 
 .list{
@@ -63,4 +90,8 @@ body{
 }
 .list:hover{
  color: cornflowerblue;
+}
+.button{
+  width: 20%;
+  background-color: cornflowerblue
 }
