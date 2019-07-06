@@ -92,6 +92,11 @@ body{
  color: cornflowerblue;
 }
 .button{
-  width: 20%;
+  width: 5rem;
+  background-color: cornflowerblue;
+  cursor: pointer;
+}
+
+.click{
   background-color: cornflowerblue
 }

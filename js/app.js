@@ -44,7 +44,7 @@ let catView = {
   createList : function(){
     this.nameList = document.getElementById('insert');
   for (let i = 0; i < cats.models.length; i++) {
-   this.nameList.insertAdjacentHTML('beforeend',`<li class='list'> ${cats.models[i].name}</li>`);
+   this.nameList.insertAdjacentHTML('beforeend',` <li class='list'><button class="click"> ${cats.models[i].name} </button></li>`);
 
  }
 
@@ -65,3 +65,42 @@ let catView = {
 // catView.render();
 catView.createList();
 catView.render();
+
+
+
+// TO add feched images on the page
+// function addImage(data) {
+//     let htmlContent = '';
+//     const firstImage = data.results[0];
+//
+//     if (firstImage) {
+//         htmlContent = `<figure>
+//             <img src="${firstImage.urls.small}" alt="${searchedForText}">
+//             <figcaption>${searchedForText} by ${firstImage.user.name}</figcaption>
+//         </figure>`;
+//     } else {
+//         htmlContent = 'Unfortunately, no image was returned for your search.'
+//     }
+//
+//     responseContainer.insertAdjacentHTML('afterbegin', htmlContent);
+// }
+
+
+
+// complete fetch API concept to to fetch and Image using API key
+// fetch(`https://api.unsplash.com/search/photos?page=1&query=${searchedForText}`, {
+//     headers: {
+//         Authorization: 'Client-ID abc123'
+//     }
+// }).then(response => response.json())
+// .then(addImage)
+// .catch(e => requestError(e, 'image'));
+//
+// function addImage(data) {
+//     debugger;
+// }
+// // Handling request
+// function requestError(e, part) {
+//     console.log(e);
+//     responseContainer.insertAdjacentHTML('beforeend', `<p class="network-warning">Oh no! There was an error making a request for the ${part}.</p>`);
+// }
